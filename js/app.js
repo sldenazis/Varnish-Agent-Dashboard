@@ -53,7 +53,7 @@ App.updateBandwidthGauge = function(){
 	var new_bandwidth = App.newStats.s_hdrbytes.value + App.newStats.s_bodybytes.value;
 	var old_bandwidth = App.oldStats.s_hdrbytes.value + App.oldStats.s_bodybytes.value;
 	
-	var actual_bandwidth_in_mega = Math.round((new_bandwidth - old_bandwidth) / 1024 / 1024);
+	var actual_bandwidth_in_mega = Math.round( ( ( (new_bandwidth - old_bandwidth) / 1024 ) / 1024 ) * 8 );
 	bandwidth_per_second = Math.round(actual_bandwidth_in_mega / (App.refreshTime / 1000));
 	
 	if(bandwidth_per_second > App.bandwidthMaxValue){
@@ -123,8 +123,8 @@ App.getTrafficMetrics = function() {
 	
 	var bandwith = {
 		label: "Bandwidth",
-		new_value: nFormatter((new_bandwidth - old_bandwidth)/(App.refreshTime/1000)),
-		average_value: nFormatter(new_bandwidth / App.newStats.uptime.value)
+		new_value: nFormatter(((new_bandwidth - old_bandwidth)/(App.refreshTime/1000)) * 8),
+		average_value: nFormatter((new_bandwidth / App.newStats.uptime.value) * 8)
 	}
 	
 	return [client_conn, client_req, req_per_conn, bandwith]
