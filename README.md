@@ -1,7 +1,7 @@
 ##Introduction
 This is a simple realtime HTML Dashboard that works together with the new Varnish Agent 2 (https://github.com/varnish/vagent2).
 
-![Screenshot](https://raw.github.com/pbruna/Varnish-Agent-Dashboard/master/img/screenshot.png)
+![Screenshot](https://raw.github.com/sldenazis/Varnish-Agent-Dashboard/master/img/screenshot.png)
 
 The previous image was taken from a live site using Varnish.
 
@@ -39,7 +39,7 @@ For this guide we are going to assume that the Dashboard will be located at /var
 ```bash
 mkdir -p /var/www/html
 cd /var/www/html
-git clone git://github.com/pbruna/Varnish-Agent-Dashboard.git
+git clone git@github.com:sldenazis/Varnish-Agent-Dashboard.git
 ```
 
 **3. Run the Agent and use the Dashboard**
